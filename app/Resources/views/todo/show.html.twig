@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container">
+    <h2> Hello {{ user }}, it's your todos:</h2> <a class="btn btn-default" href="/add">Add</a>
+</div>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Description</th>
+            <th>Priority</th>
+            <th>Date</th>
+        <tbody>
+        {% for todo in todos %}
+
+        <td>{{ todo.description }}</td>
+        <td>{{ todo.priority }}</td>
+        <td>{{ todo.date }}</td>
+        <td>
+            <a class="btn btn-default" href="/edit/{{ todo.id }}">Edit</a>
+            <a class="btn btn-danger" href="/delete/{{ todo.id }}">Delete</a>
+        </td>
+        </tr>
+        </tbody>
+
+        {% endfor %}
+        <tbody>
+    </table>
+                
+{% endblock %}

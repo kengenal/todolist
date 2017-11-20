@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2 class="form-signin-heading text-center">Register</h2>
+   <div class="container-form">
+		<div class="register-container">
+            {{ form_start(register_form) }}
+                {{ form_widget(register_form) }}
+            {{ form_end(register_form) }}
+        </div>
+    </div>
+{% endblock %}
